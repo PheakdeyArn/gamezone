@@ -11,6 +11,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeStack from './routes/homeStack';
 import ReviewDetails from './screens/reviewDetails';
 import About from './screens/about';
+import { globalStyles } from './styles/global';
 
 function HomeScreen() {
   return (
@@ -39,7 +40,7 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen options={{headerStyle: globalStyles.header}} name="Home" component={Home} />
         <Stack.Screen name="ReviewDetail" component={ReviewDetails} />
         <Stack.Screen name="About" component={About} />
       </Stack.Navigator>

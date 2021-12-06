@@ -9,6 +9,11 @@ export const globalStyles = StyleSheet.create({
         justifyContent: 'center',
     },
 
+    header: {
+        backgroundColor: '#48C9B0'
+    },
+
+
     titleText: {
         fontFamily: 'Nunito_Bold',
         fontSize: 24,
@@ -33,6 +38,33 @@ export const globalStyles = StyleSheet.create({
         color: "#fff",
         alignSelf: "center",
         fontFamily: 'Nunito_Regular',
+    },
+
+    itemListContainer: {
+        marginTop: 30,
+        width: '90%',
+    },
+
+    detailItemWrapper: {
+        paddingTop: 10,
+       
+    },
+
+    detailItem: {
+        // maxWidth: '80%',
+        backgroundColor: '#FFF',
+        padding: 15,
+        borderRadius: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        // marginBottom: 20,
+    },
+
+    detailItemText: {
+        fontSize: 18,
+        fontFamily: 'Nunito_Bold',
+        color: '#99A3A4'
     }
 
 });
