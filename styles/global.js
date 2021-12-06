@@ -4,7 +4,7 @@ export const globalStyles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#F2F3F4',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -21,7 +21,7 @@ export const globalStyles = StyleSheet.create({
 
     appButtonContainer: {
         elevation: 8,
-        backgroundColor: "#009688",
+        backgroundColor: "#48C9B0",
         borderRadius: 10,
         paddingVertical: 10,
         paddingHorizontal: 12,
@@ -29,11 +29,10 @@ export const globalStyles = StyleSheet.create({
       }, 
 
     appButtonText: {
-    fontSize: 14,
-    color: "#fff",
-    fontWeight: "bold",
-    alignSelf: "center",
-    // textTransform: "uppercase"
+        fontSize: 14,
+        color: "#fff",
+        alignSelf: "center",
+        fontFamily: 'Nunito_Regular',
     }
 
 });

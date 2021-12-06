@@ -11,14 +11,14 @@ export default function ReviewDetails({navigation}) {
       <Button title="About" onPress={() => navigation.push("About")} /> */}
 
       {/* ReView Detail Navigatoin Button  */}
-      <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => navigation.push("Home")} >
+      <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => navigation.goBack()} >
         <Text style={globalStyles.appButtonText} >Review Detail</Text>
       </TouchableOpacity>
 
         {/* About Navigatoin Button  */}
-      <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => navigation.push("About")} >
+      {/* <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => navigation.push("About")} >
         <Text style={globalStyles.appButtonText} >About</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 }

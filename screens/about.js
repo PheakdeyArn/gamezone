@@ -8,8 +8,8 @@ export default function About({navigation}) {
       <Text style={globalStyles.titleText} >About Screen</Text>
       <Text style={globalStyles.contextText} >Hello! This is About Screen,</Text>
 
-      <Button title="Home" onPress={() => navigation.push("Home")} />
-      <Button title="Review Detail" onPress={() => navigation.push("ReviewDetail")} />
+      <Button title="Home" onPress={() => navigation.goBack()} />
+      {/* <Button title="Review Detail" onPress={() => navigation.push("ReviewDetail")} /> */}
     
     </View>
   );
