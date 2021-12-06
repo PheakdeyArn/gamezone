@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Home from './screens/home';
 import { useFonts } from 'expo-font';
+import 'react-native-gesture-handler';
+
 
 export default function App() {
 
@@ -14,7 +16,12 @@ export default function App() {
   }
 
   return (
-      <Home />
+    <Home />
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name="Home" component={HomeScreen} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 
 }
