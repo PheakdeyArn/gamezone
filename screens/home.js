@@ -31,9 +31,9 @@ export default function Home({navigation}) {
       </TouchableOpacity> */}
 
         {/* About Navigatoin Button  */}
-      <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => navigation.push("About")} >
+      {/* <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => navigation.push("About")} >
         <Text style={globalStyles.appButtonText} >About</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       < FlatList 
         style={globalStyles.itemListContainer}

@@ -7,11 +7,15 @@ import 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeStack from './routes/homeStack';
 import ReviewDetails from './screens/reviewDetails';
 import About from './screens/about';
 import { globalStyles } from './styles/global';
+
+// import HomeStack from './routes/homeStack';
+import AboutStack from './routes/aboutStack';
 
 function HomeScreen() {
   return (
@@ -22,6 +26,27 @@ function HomeScreen() {
 }
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function HomeStackNav() {
+  return (
+    <Stack.Navigator>
+        <Stack.Screen options={{headerStyle: globalStyles.header}} name="Home" component={Home} />
+        <Stack.Screen name="ReviewDetail" component={ReviewDetails} />
+      </Stack.Navigator>
+  );
+}
+
+
+function AboutStackNav() {
+  return (
+    <Stack.Navigator>
+        <Stack.Screen options={{headerStyle: globalStyles.header}} name="About" component={About} />
+     
+      </Stack.Navigator>
+  );
+}
+
 
 
 export default function App() {
@@ -39,19 +64,37 @@ export default function App() {
     // <Navigator />
 
     <NavigationContainer>
-      <Stack.Navigator>
+
+
+      {/* <Stack.Navigator>
         <Stack.Screen options={{headerStyle: globalStyles.header}} name="Home" component={Home} />
         <Stack.Screen name="ReviewDetail" component={ReviewDetails} />
         <Stack.Screen name="About" component={About} />
-      </Stack.Navigator>
-      {/* < HomeStack/> */}
+      </Stack.Navigator> */}
+
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={HomeStackNav} />
+      <Drawer.Screen name="About" component={AboutStackNav} />
+    </Drawer.Navigator>
+
+
     </NavigationContainer>
+
+    // < NavigationContainer>
+
+    //   <HomeStack/>
+    
+    // </NavigationContainer>
+
+
 
     // <NavigationContainer>
     //   <Stack.Navigator>
     //     <Stack.Screen name="Home" component={HomeScreen} />
     //   </Stack.Navigator>
     // </NavigationContainer>
+
+
 
   );
 
