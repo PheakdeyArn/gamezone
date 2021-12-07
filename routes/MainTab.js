@@ -18,7 +18,7 @@ const MainTabScreen = () => {
             barStyle={{ backgroundColor: '#009387' }}
         >
             <Tab.Screen
-                name="Home"
+                name="HomeStack"
                 component={HomeStack}
                 options={{
                 tabBarLabel: 'Home',
@@ -28,7 +28,7 @@ const MainTabScreen = () => {
                 }}
             />
             <Tab.Screen
-                name="Profile"
+                name="ProfileStack"
                 component={ProfileStack}
                 options={{
                 tabBarLabel: 'Profile',
@@ -38,7 +38,7 @@ const MainTabScreen = () => {
                 }}
             />
             <Tab.Screen
-                name="Notification"
+                name="NotificationStack"
                 component={NotificationStack}
                 options={{
                 tabBarLabel: 'Notification',

@@ -34,7 +34,7 @@ export function DrawerContent(props) {
                         <View style={{flexDirection:'row',marginTop: 15}}>
                             <Avatar.Image 
                                 source={{
-                                    uri: 'https://api.adorable.io/avatars/50/abott@adorable.png'
+                                    uri: 'https://www.pinkvilla.com/imageresize/tom_cruise_action_movies.jpg?width=752&format=webp&t=pvorg'
                                 }}
                                 size={50}
                             />
@@ -66,7 +66,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Home"
-                            onPress={() => {}}
+                            onPress={() => {props.navigation.navigate("HomeStack")}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -77,7 +77,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Profile"
-                            onPress={() => {}}
+                            onPress={() => {props.navigation.navigate("ProfileStack")}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -88,7 +88,9 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Bookmarks"
-                            onPress={() => {}}
+                            onPress={() => {
+                                props.navigation.navigate("BookmarkDrawer")
+                            }}
                         />
                         {/* <DrawerItem 
                             icon={({color, size}) => (

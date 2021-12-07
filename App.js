@@ -8,6 +8,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import AboutStack from './routes/AboutStack';
 import MainTabScreen from './routes/MainTab';
+import BookmarkStack from './routes/BookmarkStack';
 
 import { DrawerContent } from './screens/DrawerContent';
 
@@ -37,12 +38,12 @@ export default function App() {
         }} 
       >
         <Drawer.Screen 
-          name="Home" 
+          name="HomeDrawer" 
           component={MainTabScreen} 
         />
         <Drawer.Screen 
-          name="About" 
-          component={AboutStack} 
+          name="BookmarkDrawer" 
+          component={BookmarkStack} 
         />
       </Drawer.Navigator>
     </NavigationContainer> 
