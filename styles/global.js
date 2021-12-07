@@ -65,6 +65,10 @@ export const globalStyles = StyleSheet.create({
         fontSize: 18,
         fontFamily: 'Nunito_Bold',
         color: '#99A3A4'
-    }
+    },
+
+    rightHeaderBtn: {
+        marginRight: 15,
+    },
 
 });

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Home from './screens/home';
 
-import { View, Text } from 'react-native';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import 'react-native-gesture-handler';
 
@@ -15,17 +15,6 @@ import HomeStack from './routes/homeStack';
 import ReviewDetails from './screens/reviewDetails';
 import About from './screens/about';
 import { globalStyles } from './styles/global';
-
-// import HomeStack from './routes/homeStack';
-import AboutStack from './routes/aboutStack';
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -47,12 +36,27 @@ function HomeStackNav({navigation}) {
         )
       }} 
     >
-        <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="ReviewDetail" component={ReviewDetails} />
-      </Stack.Navigator>
+      <Stack.Screen 
+        name="Home" 
+        component={Home}
+      />
+      <Stack.Screen 
+        name="ReviewDetail" 
+        component={ReviewDetails} 
+        options={{
+          headerRight: () => (
+            <TouchableOpacity 
+            style={globalStyles.rightHeaderBtn} 
+            onPress={() => navigation.goBack()}
+            >
+            <Text style={globalStyles.appButtonText} >Back</Text>
+          </TouchableOpacity>
+          ),}
+        }
+      />
+    </Stack.Navigator>
   );
 }
-
 
 function AboutStackNav({navigation}) {
   return (
@@ -71,13 +75,10 @@ function AboutStackNav({navigation}) {
         )
       }} 
     >
-        <Stack.Screen name="About" component={About} />
-     
-      </Stack.Navigator>
+      <Stack.Screen name="About" component={About} />
+    </Stack.Navigator>
   );
 }
-
-
 
 export default function App() {
 
@@ -91,47 +92,27 @@ export default function App() {
   }
 
   return (
-    // <Navigator />
 
     <NavigationContainer>
-
-
-      {/* <Stack.Navigator>
-        <Stack.Screen options={{headerStyle: globalStyles.header}} name="Home" component={Home} />
-        <Stack.Screen name="ReviewDetail" component={ReviewDetails} />
-        <Stack.Screen name="About" component={About} />
-      </Stack.Navigator> */}
-
-    <Drawer.Navigator screenOptions={{
-      headerStyle:{
-        backgroundColor: "#009387"
-      },
-      headerShown: false,
-    }} >
-      <Drawer.Screen name="Home" component={HomeStackNav} />
-      <Drawer.Screen name="About" component={AboutStackNav} />
+    <Drawer.Navigator 
+      screenOptions={{
+        headerStyle:{
+          backgroundColor: "#009387"
+        },
+        headerShown: false,
+      }} 
+    >
+      <Drawer.Screen 
+        name="Home" 
+        component={HomeStackNav} 
+      />
+      <Drawer.Screen 
+        name="About" 
+        component={AboutStackNav} 
+      />
     </Drawer.Navigator>
-
-
     </NavigationContainer>
-
-    // < NavigationContainer>
-
-    //   <HomeStack/>
     
-    // </NavigationContainer>
-
-
-
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen name="Home" component={HomeScreen} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-
-
-
   );
-
 }
 
