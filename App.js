@@ -5,6 +5,8 @@ import { View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 import 'react-native-gesture-handler';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -28,20 +30,48 @@ function HomeScreen() {
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-function HomeStackNav() {
+function HomeStackNav({navigation}) {
   return (
-    <Stack.Navigator>
-        <Stack.Screen options={{headerStyle: globalStyles.header}} name="Home" component={Home} />
+    <Stack.Navigator 
+      screenOptions={{
+        headerStyle:{
+          backgroundColor: "#009387",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle:{
+          fontFamily:"Nunito_Bold",
+        },
+        headerLeft: () => (
+          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387"
+          onPress={()=>{navigation.openDrawer()}}/>
+        )
+      }} 
+    >
+        <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="ReviewDetail" component={ReviewDetails} />
       </Stack.Navigator>
   );
 }
 
 
-function AboutStackNav() {
+function AboutStackNav({navigation}) {
   return (
-    <Stack.Navigator>
-        <Stack.Screen options={{headerStyle: globalStyles.header}} name="About" component={About} />
+    <Stack.Navigator 
+      screenOptions={{
+        headerStyle:{
+          backgroundColor: "#009387",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle:{
+          fontFamily:"Nunito_Bold",
+        },
+        headerLeft: () => (
+          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387"
+          onPress={()=>{navigation.openDrawer()}}/>
+        )
+      }} 
+    >
+        <Stack.Screen name="About" component={About} />
      
       </Stack.Navigator>
   );
@@ -72,7 +102,12 @@ export default function App() {
         <Stack.Screen name="About" component={About} />
       </Stack.Navigator> */}
 
-    <Drawer.Navigator>
+    <Drawer.Navigator screenOptions={{
+      headerStyle:{
+        backgroundColor: "#009387"
+      },
+      headerShown: false,
+    }} >
       <Drawer.Screen name="Home" component={HomeStackNav} />
       <Drawer.Screen name="About" component={AboutStackNav} />
     </Drawer.Navigator>
