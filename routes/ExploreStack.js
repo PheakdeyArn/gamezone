@@ -2,12 +2,12 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import About from '../screens/About';
+import Explore from '../screens/Explore';
 
 const Stack = createStackNavigator();
 
 
-const AboutStack = ({navigation}) => {
+const ExploreStack = ({navigation}) => {
   return (
       <Stack.Navigator 
       screenOptions={{
@@ -24,10 +24,10 @@ const AboutStack = ({navigation}) => {
           )
       }} 
       >
-      <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="Explore" component={Explore} />
       </Stack.Navigator>
   );
 }
 
-export default AboutStack;
-  
+
+export default ExploreStack;

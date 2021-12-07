@@ -3,8 +3,10 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeStack from './HomeStack';
-import Explore from '../screens/Explore';
-import Profile from '../screens/Profile';
+import ProfileStack from './ProfileStack';
+import ExploreStack from './ExploreStack';
+import NotificationStack from './NotificationStack';
+
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -12,8 +14,8 @@ const MainTabScreen = () => {
     return (
         <Tab.Navigator
             initialRouteName="Home"
-            activeColor="#e91e63"
-            barStyle={{ backgroundColor: 'tomato' }}
+            activeColor="#fff"
+            barStyle={{ backgroundColor: '#009387' }}
         >
             <Tab.Screen
                 name="Home"
@@ -21,27 +23,37 @@ const MainTabScreen = () => {
                 options={{
                 tabBarLabel: 'Home',
                 tabBarIcon: ({ color }) => (
-                    <Icon name="ios-home" color={color} size={25}/>
+                    <Icon name="ios-home" color={color} size={24}/>
                 ),
                 }}
             />
             <Tab.Screen
                 name="Profile"
-                component={Profile}
+                component={ProfileStack}
                 options={{
                 tabBarLabel: 'Profile',
                 tabBarIcon: ({ color }) => (
-                    <Icon name="ios-person" color={color} size={25}/>
+                    <Icon name="ios-person" color={color} size={24}/>
+                ),
+                }}
+            />
+            <Tab.Screen
+                name="Notification"
+                component={NotificationStack}
+                options={{
+                tabBarLabel: 'Notification',
+                tabBarIcon: ({ color }) => (
+                    <Icon name="ios-notifications" color={color} size={24}/>
                 ),
                 }}
             />
             <Tab.Screen
                 name="Explore"
-                component={Explore}
+                component={ExploreStack}
                 options={{
                 tabBarLabel: 'Explore',
                 tabBarIcon: ({ color }) => (
-                    <Icon name="ios-aperture" color={color} size={25}/>
+                    <Icon name="ios-aperture" color={color} size={24}/>
                 ),
                 }}
             />

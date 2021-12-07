@@ -2,12 +2,12 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import About from '../screens/About';
+import Notification from '../screens/Notification';
 
 const Stack = createStackNavigator();
 
 
-const AboutStack = ({navigation}) => {
+const NotificationStack = ({navigation}) => {
   return (
       <Stack.Navigator 
       screenOptions={{
@@ -24,10 +24,9 @@ const AboutStack = ({navigation}) => {
           )
       }} 
       >
-      <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="Notification" component={Notification} />
       </Stack.Navigator>
   );
 }
 
-export default AboutStack;
-  
+export default NotificationStack;

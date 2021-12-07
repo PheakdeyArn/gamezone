@@ -2,12 +2,12 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import About from '../screens/About';
+import Profile from '../screens/Profile';
 
 const Stack = createStackNavigator();
 
 
-const AboutStack = ({navigation}) => {
+const ProfileStack = ({navigation}) => {
   return (
       <Stack.Navigator 
       screenOptions={{
@@ -24,10 +24,9 @@ const AboutStack = ({navigation}) => {
           )
       }} 
       >
-      <Stack.Screen name="About" component={About} />
+      <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
   );
 }
 
-export default AboutStack;
-  
+export default ProfileStack;

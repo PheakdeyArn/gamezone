@@ -9,6 +9,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import AboutStack from './routes/AboutStack';
 import MainTabScreen from './routes/MainTab';
 
+import { DrawerContent } from './screens/DrawerContent';
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
@@ -25,6 +27,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator 
+
+        drawerContent={props => <DrawerContent {...props}/>}
         screenOptions={{
           headerStyle:{
             backgroundColor: "#009387"
