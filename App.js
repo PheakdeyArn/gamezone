@@ -1,84 +1,15 @@
-import React, {useState} from 'react';
-import Home from './screens/home';
+import React from 'react';
 
-import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import 'react-native-gesture-handler';
 
-import Icon from 'react-native-vector-icons/Ionicons';
-
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import HomeStack from './routes/homeStack';
-import ReviewDetails from './screens/reviewDetails';
-import About from './screens/about';
-import { globalStyles } from './styles/global';
+import AboutStack from './routes/AboutStack';
+import MainTabScreen from './routes/MainTab';
 
-const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
-
-function HomeStackNav({navigation}) {
-  return (
-    <Stack.Navigator 
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: "#009387",
-        },
-        headerTintColor: "#fff",
-        headerTitleStyle:{
-          fontFamily:"Nunito_Bold",
-        },
-        headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387"
-          onPress={()=>{navigation.openDrawer()}}/>
-        )
-      }} 
-    >
-      <Stack.Screen 
-        name="Home" 
-        component={Home}
-      />
-      <Stack.Screen 
-        name="ReviewDetail" 
-        component={ReviewDetails} 
-        options={{
-          headerRight: () => (
-            <TouchableOpacity 
-            style={globalStyles.rightHeaderBtn} 
-            onPress={() => navigation.goBack()}
-            >
-            <Text style={globalStyles.appButtonText} >Back</Text>
-          </TouchableOpacity>
-          ),}
-        }
-      />
-    </Stack.Navigator>
-  );
-}
-
-function AboutStackNav({navigation}) {
-  return (
-    <Stack.Navigator 
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: "#009387",
-        },
-        headerTintColor: "#fff",
-        headerTitleStyle:{
-          fontFamily:"Nunito_Bold",
-        },
-        headerLeft: () => (
-          <Icon.Button name="ios-menu" size={25} backgroundColor="#009387"
-          onPress={()=>{navigation.openDrawer()}}/>
-        )
-      }} 
-    >
-      <Stack.Screen name="About" component={About} />
-    </Stack.Navigator>
-  );
-}
 
 export default function App() {
 
@@ -92,27 +23,25 @@ export default function App() {
   }
 
   return (
-
     <NavigationContainer>
-    <Drawer.Navigator 
-      screenOptions={{
-        headerStyle:{
-          backgroundColor: "#009387"
-        },
-        headerShown: false,
-      }} 
-    >
-      <Drawer.Screen 
-        name="Home" 
-        component={HomeStackNav} 
-      />
-      <Drawer.Screen 
-        name="About" 
-        component={AboutStackNav} 
-      />
-    </Drawer.Navigator>
-    </NavigationContainer>
-    
+      <Drawer.Navigator 
+        screenOptions={{
+          headerStyle:{
+            backgroundColor: "#009387"
+          },
+          headerShown: false,
+        }} 
+      >
+        <Drawer.Screen 
+          name="Home" 
+          component={MainTabScreen} 
+        />
+        <Drawer.Screen 
+          name="About" 
+          component={AboutStack} 
+        />
+      </Drawer.Navigator>
+    </NavigationContainer> 
   );
 }
 
